@@ -1,0 +1,51 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="Dictionary-UML" name="Dictionary.cs UML">
+    <mxGraphModel dx="998" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IEnumerable" parent="1" style="html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IEnumerable&amp;lt;KeyValuePair&amp;gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="320" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IComparable" parent="1" style="html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IComparable&amp;lt;KeyValuePair&amp;gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="50" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="IEnumerator" parent="1" style="html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IEnumerator&amp;lt;KeyValuePair&amp;gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="50" width="220" x="620" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="Dictionary" parent="1" style="html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=top;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Dictionary&amp;lt;TKey, TValue&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;- _hashTable: HashTable&amp;lt;KeyValuePair&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;line-height:1.4;&quot;&gt;+ Dictionary(initialCapacity: int)&lt;br/&gt;+ Add(key: TKey, value: TValue): void&lt;br/&gt;+ Get(key: TKey): TValue&lt;br/&gt;+ Set(key: TKey, newValue: TValue): void&lt;br/&gt;+ Remove(key: TKey): void&lt;br/&gt;+ Contains(key: TKey): bool&lt;br/&gt;+ GetEnumerator(): IEnumerator&amp;lt;KeyValuePair&amp;gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="210" width="320" x="270" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="KeyValuePair" parent="1" style="html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=top;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;KeyValuePair&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;+ Key: TKey&lt;br/&gt;+ Value: TValue&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;line-height:1.4;&quot;&gt;+ KeyValuePair(key: TKey)&lt;br/&gt;+ KeyValuePair(key: TKey, value: TValue)&lt;br/&gt;+ CompareTo(other: KeyValuePair): int&lt;br/&gt;+ GetHashCode(): int&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="280" x="20" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="DictionaryEnumerator" parent="1" style="html=1;whiteSpace=wrap;overflow=hidden;verticalAlign=top;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;DictionaryEnumerator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;- _hashTableEnumerator: IEnumerator&amp;lt;KeyValuePair&amp;gt;&lt;br/&gt;+ Current: KeyValuePair&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:8px;line-height:1.4;&quot;&gt;+ DictionaryEnumerator(hashTable: HashTable)&lt;br/&gt;+ Dispose(): void&lt;br/&gt;+ MoveNext(): bool&lt;br/&gt;+ Reset(): void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="170" width="340" x="560" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="impl1" edge="1" parent="1" source="Dictionary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;" target="IEnumerable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="impl2" edge="1" parent="1" source="KeyValuePair" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;" target="IComparable">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="impl3" edge="1" parent="1" source="DictionaryEnumerator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;dashed=1;" target="IEnumerator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nest1" edge="1" parent="1" source="Dictionary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=diamondThin;startFill=1;dashed=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="KeyValuePair">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nest2" edge="1" parent="1" source="Dictionary" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=diamondThin;startFill=1;dashed=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="DictionaryEnumerator">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="575" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
